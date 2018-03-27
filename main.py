@@ -316,6 +316,9 @@ def viterbi(x, init_p, trans_p, emit_p, delta=1):
     # Backward stage, obtain the Viterbi path
     v_path = []
     prev = None
+
+    ## May still have bug
+    #
     # prob_max = 0
     #
     # for si in state:
@@ -330,7 +333,9 @@ def viterbi(x, init_p, trans_p, emit_p, delta=1):
     #
     #     v_path.append(prev)
     #     prev = v[t][prev]["prev"]
+    ##
 
+    ## Copied from wiki
     prob_max = max(value["prob"] for value in v[-1].values())
 
     # Get most probable state and its backtrack
