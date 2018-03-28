@@ -9,8 +9,8 @@ t_his = 1000
 w1 = 2*np.pi / 5
 w2 = 2*np.pi / 200
 
-trans_p = {"F": {"F": 0.8, "S": 0.2},
-           "S": {"F": 0.3, "S": 0.7}}
+trans_p = {"F": {"F": 0.9, "S": 0.1},
+           "S": {"F": 0.1, "S": 0.9}}
 
 
 x, hidden_state = gen_ts_m(w1, w2, trans_p, t_max)
