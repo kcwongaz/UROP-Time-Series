@@ -33,7 +33,7 @@ def gen_ts_m(w1, w2, tm, t_max, a1=1, a2=1, phi1=0, phi2=0, init=1):
 
     for t in range(0, t_max):
 
-        if state[t] == 1:
+        if state[t] == "F":
             x.append(a1 * np.sin(w1*t + phi1))
 
             if prob_bin(tm["F"]["F"]):
@@ -100,12 +100,12 @@ def emission(x, delta, small=0.1, large=0.2):
 
             diff += (x[n*delta + i + 1] - x[n*delta + i]) / x[n*delta + i]
 
-            if abs(diff) > large:
-                s.append(2)
-            elif abs(diff) > small:
-                s.append(1)
-            else:
-                s.append(0)
+        if abs(diff) > large:
+            s.append(2)
+        elif abs(diff) > small:
+            s.append(1)
+        else:
+            s.append(0)
 
     return s
 
